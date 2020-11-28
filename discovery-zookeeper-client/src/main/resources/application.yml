@@ -1,13 +1,13 @@
 spring:
   application:
-    name: discovery-zookeeper
+    name: zookeeper-client
   cloud:
     zookeeper:
       connect-string: localhost:2181
       discovery:
         enabled: true
 server:
-  port: 8081
+  port: 2345
 logging:
   level:
     org.apache.zookeeper.ClientCnxn: WARN

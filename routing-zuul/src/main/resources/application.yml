@@ -1,0 +1,11 @@
+server:
+  port: 3000
+spring:
+  application:
+    name: zuul-proxy
+zuul:
+  routes:
+    # All requests from the UI that starts with “/order/” will be routed to order service at http://loclahost:6001/order
+    service-order:
+      path: /order/**
+      url: http://localhost:6001/order/

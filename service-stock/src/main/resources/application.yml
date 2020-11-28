@@ -1,0 +1,5 @@
+spring:
+  application:
+    name: service-stock
+server:
+  port: 6002
