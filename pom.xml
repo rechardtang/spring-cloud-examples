@@ -23,6 +23,7 @@
         <spring-cloud-zookeeper.version>2.0.2.RELEASE</spring-cloud-zookeeper.version>
         <spring-cloud-zkcurator.version>3.3.0</spring-cloud-zkcurator.version>
         <spring-cloud-eureka.version>2.2.4.RELEASE</spring-cloud-eureka.version>
+        <spring-cloud-eureka-client.version>2.2.4.RELEASE</spring-cloud-eureka-client.version>
         <spring-cloud-nacos.version>2.2.4.RELEASE</spring-cloud-nacos.version>
         <spring-cloud-dubbo.version>2.2.4.RELEASE</spring-cloud-dubbo.version>
         <spring-cloud-feign.version>2.2.4.RELEASE</spring-cloud-feign.version>
@@ -32,16 +33,27 @@
         <spring-cloud-zipkin.version>2.2.4.RELEASE</spring-cloud-zipkin.version>
         <spring-cloud-sleuth.version>2.2.4.RELEASE</spring-cloud-sleuth.version>
         <spring-cloud-hystrix.version>2.2.4.RELEASE</spring-cloud-hystrix.version>
+        <spring-cloud-alibaba.version>2.2.0.RELEASE</spring-cloud-alibaba.version>
         <lombok.version>1.18.16</lombok.version>
     </properties>
 
     <modules>
-        <module>config-zookeeper</module>
-        <module>discovery-zookeeper</module>
+        <module>discovery-eureka</module>
+        <module>discovery-eureka-client</module>
+        <module>discovery-nacos-client</module>
+        <module>discovery-zookeeper-client</module>
+
+        <module>routing-gateway</module>
+        <module>routing-zuul</module>
     </modules>
 
     <dependencyManagement>
         <dependencies>
+            <dependency>
+                <groupId>org.springframework.cloud</groupId>
+                <artifactId>spring-cloud-starter-netflix-eureka-server</artifactId>
+                <version>${spring-cloud-eureka.version}</version>
+            </dependency>
             <dependency>
                 <groupId>org.springframework.boot</groupId>
                 <artifactId>spring-boot-starter-web</artifactId>
@@ -76,6 +88,23 @@
                         <groupId>commons-logging</groupId>
                     </exclusion>
                 </exclusions>
+            </dependency>
+
+            <dependency>
+                <groupId>com.alibaba.cloud</groupId>
+                <artifactId>spring-cloud-starter-alibaba-nacos-discovery</artifactId>
+                <version>${spring-cloud-alibaba.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>com.alibaba.cloud</groupId>
+                <artifactId>spring-cloud-alibaba-nacos-config</artifactId>
+                <version>${spring-cloud-alibaba.version}</version>
+            </dependency>
+
+            <dependency>
+                <groupId>com.alibaba.cloud</groupId>
+                <artifactId>spring-cloud-alibaba-nacos-discovery</artifactId>
+                <version>${spring-cloud-alibaba.version}</version>
             </dependency>
 
             <dependency>
