@@ -25,8 +25,7 @@
         <spring-cloud-eureka.version>2.2.4.RELEASE</spring-cloud-eureka.version>
         <spring-cloud-eureka-client.version>2.2.4.RELEASE</spring-cloud-eureka-client.version>
         <spring-cloud-nacos.version>2.2.4.RELEASE</spring-cloud-nacos.version>
-        <spring-cloud-dubbo.version>2.2.4.RELEASE</spring-cloud-dubbo.version>
-        <spring-cloud-feign.version>2.2.4.RELEASE</spring-cloud-feign.version>
+        <spring-cloud-dubbo.version>2.5.7</spring-cloud-dubbo.version>
         <spring-cloud-kafka.version>2.2.4.RELEASE</spring-cloud-kafka.version>
         <spring-cloud-gateway.version>2.2.4.RELEASE</spring-cloud-gateway.version>
         <spring-cloud-zuul.version>2.2.4.RELEASE</spring-cloud-zuul.version>
@@ -34,6 +33,7 @@
         <spring-cloud-sleuth.version>2.2.4.RELEASE</spring-cloud-sleuth.version>
         <spring-cloud-hystrix.version>2.2.4.RELEASE</spring-cloud-hystrix.version>
         <spring-cloud-alibaba.version>2.2.0.RELEASE</spring-cloud-alibaba.version>
+        <alibaba-dubbo.version>2.7.7</alibaba-dubbo.version>
         <lombok.version>1.18.16</lombok.version>
     </properties>
 
@@ -45,17 +45,15 @@
 
         <module>routing-gateway</module>
         <module>routing-zuul</module>
-
         <module>service-order</module>
+
+        <module>feign-examples</module>
+        <module>dubbo-examples</module>
     </modules>
 
     <dependencyManagement>
         <dependencies>
-            <dependency>
-                <groupId>org.springframework.cloud</groupId>
-                <artifactId>spring-cloud-starter-netflix-eureka-server</artifactId>
-                <version>${spring-cloud-eureka.version}</version>
-            </dependency>
+
             <dependency>
                 <groupId>org.springframework.cloud</groupId>
                 <artifactId>spring-cloud-dependencies</artifactId>
@@ -63,6 +61,29 @@
                 <type>pom</type>
                 <scope>import</scope>
             </dependency>
+
+            <dependency>
+                <groupId>org.springframework.boot</groupId>
+                <artifactId>spring-boot-dependencies</artifactId>
+                <version>${spring-boot.version}</version>
+                <type>pom</type>
+                <scope>import</scope>
+            </dependency>
+
+            <dependency>
+                <groupId>org.apache.dubbo</groupId>
+                <artifactId>dubbo-dependencies-bom</artifactId>
+                <version>${alibaba-dubbo.version}</version>
+                <type>pom</type>
+                <scope>import</scope>
+            </dependency>
+
+            <dependency>
+                <groupId>org.springframework.cloud</groupId>
+                <artifactId>spring-cloud-starter-netflix-eureka-server</artifactId>
+                <version>${spring-cloud-eureka.version}</version>
+            </dependency>
+
             <dependency>
                 <groupId>org.apache.curator</groupId>
                 <artifactId>curator-framework</artifactId>
@@ -101,6 +122,12 @@
                 <groupId>com.alibaba.cloud</groupId>
                 <artifactId>spring-cloud-alibaba-nacos-discovery</artifactId>
                 <version>${spring-cloud-alibaba.version}</version>
+            </dependency>
+
+            <dependency>
+                <groupId>org.apache.dubbo</groupId>
+                <artifactId>dubbo-spring-boot-starter</artifactId>
+                <version>${alibaba-dubbo.version}</version>
             </dependency>
 
             <dependency>

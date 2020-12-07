@@ -34,9 +34,6 @@ public class DemoController {
 
     @GetMapping("/dec2")
     public Object decreaseStock() {
-
-        redisTemplate.opsForValue().setIfAbsent("a", "1");
-
         RLock redLock = redissonClient.getLock("redLock");
         redLock.lock();
         try {

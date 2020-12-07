@@ -1,0 +1,9 @@
+feign:
+  hystrix:
+    enabled: true
+
+
+
+logging:
+  level:
+    com.example.feign1: DEBUG
