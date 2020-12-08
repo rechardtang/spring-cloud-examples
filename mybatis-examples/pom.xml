@@ -8,21 +8,12 @@
         <version>0.0.1-SNAPSHOT</version>
         <relativePath/> <!-- lookup parent from repository -->
     </parent>
-    <artifactId>tracing-zipkin</artifactId>
+    <artifactId>mybatis-examples</artifactId>
     <version>0.0.1-SNAPSHOT</version>
-    <name>tracing-zipkin</name>
+    <name>mybatis-examples</name>
     <description>Demo project for Spring Boot</description>
 
-
-    <dependencies>
-        <dependency>
-            <groupId>org.springframework.boot</groupId>
-            <artifactId>spring-boot-starter</artifactId>
-        </dependency>
-        <dependency>
-            <groupId>org.springframework.cloud</groupId>
-            <artifactId>spring-cloud-sleuth-zipkin</artifactId>
-        </dependency>
-    </dependencies>
-
+    <modules>
+        <module>mybatis-annotation</module>
+    </modules>
 </project>

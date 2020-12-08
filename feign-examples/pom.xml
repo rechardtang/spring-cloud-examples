@@ -16,6 +16,5 @@
 
     <modules>
         <module>feign-1</module>
-        <module>feign-2</module>
     </modules>
 </project>

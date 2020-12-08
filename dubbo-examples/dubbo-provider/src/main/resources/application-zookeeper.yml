@@ -1,0 +1,16 @@
+spring:
+  application:
+    name: dubbo-provider
+
+server:
+  port: 8101
+
+dubbo:
+  scan:
+    base-packages: com.example.dubboprovider.service
+  protocol:
+    name: dubbo
+    port: 12345
+  registry:
+    address: zookeeper://127.0.0.1:2181
+    file: ${user.home}/dubbo-cache/${spring.application.name}/dubbo.cache

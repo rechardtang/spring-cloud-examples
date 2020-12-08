@@ -1,0 +1,4 @@
+logging:
+  level:
+    root: warn
+    com.example.mybatisannotation.mapper: trace

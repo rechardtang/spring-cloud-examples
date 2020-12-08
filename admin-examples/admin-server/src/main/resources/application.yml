@@ -1,0 +1,7 @@
+spring:
+  application:
+    name: boot-admin-server
+  profiles:
+    active: secured
+server:
+  port: 8421
