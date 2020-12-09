@@ -1,0 +1,7 @@
+
+server:
+  port: 8276
+
+logging:
+  level:
+    org.springframework.data.elasticsearch: TRACE

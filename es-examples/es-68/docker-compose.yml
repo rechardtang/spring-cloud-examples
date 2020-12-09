@@ -1,0 +1,15 @@
+version: "3"
+
+services:
+  es:
+    image: elasticsearch:6.8.13
+    container_name: es68
+    restart: always
+    ports:
+      - "9200:9200"
+      - "9300:9300"
+    volumes:
+      - /usr/share/zoneinfo/Asia/Shanghai:/etc/localtime:ro
+      - ./data:/usr/share/elasticsearch/data
+    environment:
+      - discovery.type=single-node

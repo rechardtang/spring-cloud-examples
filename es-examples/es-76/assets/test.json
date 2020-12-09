@@ -1,0 +1,33 @@
+{
+  "from": 0,
+  "size": 10000,
+  "query": {
+    "match": {
+      "title": {
+        "query": "阳光",
+        "operator": "OR",
+        "analyzer": "ik_max_word",
+        "prefix_length": 0,
+        "max_expansions": 50,
+        "fuzzy_transpositions": true,
+        "lenient": false,
+        "zero_terms_query": "NONE",
+        "auto_generate_synonyms_phrase_query": true,
+        "boost": 1.0
+      }
+    }
+  },
+  "version": true,
+  "highlight": {
+    "fields": {
+      "title": {
+        "pre_tags": [
+          "<em>"
+        ],
+        "post_tags": [
+          "</em>"
+        ]
+      }
+    }
+  }
+}

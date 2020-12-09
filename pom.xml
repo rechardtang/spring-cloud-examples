@@ -41,7 +41,6 @@
     </properties>
 
     <modules>
-        <module>discovery-zookeeper-client</module>
         <module>routing-gateway</module>
         <module>routing-zuul</module>
         <module>service-order</module>
@@ -147,6 +146,7 @@
                 <groupId>org.apache.dubbo</groupId>
                 <artifactId>dubbo-dependencies-zookeeper</artifactId>
                 <version>${alibaba-dubbo.version}</version>
+                <type>pom</type>
                 <exclusions>
                     <exclusion>
                         <groupId>org.slf4j</groupId>
