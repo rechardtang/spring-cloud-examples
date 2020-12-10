@@ -18,7 +18,7 @@ public class Article {
     @Id
     private String id;
 
-    @MultiField(mainField = @Field(type = Text, fielddata = true), otherFields = {@InnerField(suffix = "verbatim", type = Keyword)})
+    @MultiField(mainField = @Field(type = Text, fielddata = true, analyzer = "ik_max_word", searchAnalyzer = "ik_max_word"), otherFields = {@InnerField(suffix = "verbatim", type = Keyword)})
     private String title;
 
     @Field(type = Nested, includeInParent = true)
@@ -27,11 +27,19 @@ public class Article {
     @Field(type = Keyword)
     private String[] tags;
 
+    @Field(type = Text, analyzer = "ik_max_word", searchAnalyzer = "ik_max_word")
+    private String content;
+
     public Article() {
     }
 
     public Article(String title) {
         this.title = title;
+    }
+
+    public Article(String title, String content) {
+        this.title = title;
+        this.content = content;
     }
 
     public String getId() {
@@ -64,6 +72,14 @@ public class Article {
 
     public void setTags(String... tags) {
         this.tags = tags;
+    }
+
+    public String getContent() {
+        return content;
+    }
+
+    public void setContent(String content) {
+        this.content = content;
     }
 
     @Override

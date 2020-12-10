@@ -4,18 +4,18 @@
     <modelVersion>4.0.0</modelVersion>
     <parent>
         <groupId>com.example</groupId>
-        <artifactId>spring-cloud-examples</artifactId>
+        <artifactId>mq-examples</artifactId>
         <version>0.0.1-SNAPSHOT</version>
         <relativePath/> <!-- lookup parent from repository -->
     </parent>
-    <artifactId>mq-examples</artifactId>
+    <artifactId>kafka-examples</artifactId>
     <version>0.0.1-SNAPSHOT</version>
-    <name>mq-examples</name>
+    <name>kafka-examples</name>
     <description>Demo project for Spring Boot</description>
 
     <modules>
-        <module>kafka-examples</module>
-        <module>rabbitmq-examples</module>
-        <module>rocketmq-examples</module>
+        <module>kafka-consumer</module>
+        <module>kafka-producer</module>
     </modules>
+
 </project>

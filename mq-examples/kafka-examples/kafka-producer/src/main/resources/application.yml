@@ -1,0 +1,12 @@
+server:
+  port: 8990
+spring:
+  application:
+    name: kafka-producer
+  kafka:
+    producer:
+      acks: all
+      retries: 3
+    streams:
+      replication-factor: 3
+

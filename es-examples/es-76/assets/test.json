@@ -1,33 +1,33 @@
 {
   "from": 0,
-  "size": 10000,
+  "size": 10,
   "query": {
-    "match": {
-      "title": {
-        "query": "阳光",
-        "operator": "OR",
-        "analyzer": "ik_max_word",
-        "prefix_length": 0,
-        "max_expansions": 50,
-        "fuzzy_transpositions": true,
-        "lenient": false,
-        "zero_terms_query": "NONE",
-        "auto_generate_synonyms_phrase_query": true,
-        "boost": 1.0
-      }
+    "bool": {
+      "must": [
+        {
+          "query_string": {
+            "query": "千里",
+            "fields": [
+              "title^1.0"
+            ],
+            "type": "best_fields",
+            "default_operator": "and",
+            "max_determinized_states": 10000,
+            "enable_position_increments": true,
+            "fuzziness": "AUTO",
+            "fuzzy_prefix_length": 0,
+            "fuzzy_max_expansions": 50,
+            "phrase_slop": 0,
+            "escape": false,
+            "auto_generate_synonyms_phrase_query": true,
+            "fuzzy_transpositions": true,
+            "boost": 1.0
+          }
+        }
+      ],
+      "adjust_pure_negative": true,
+      "boost": 1.0
     }
   },
-  "version": true,
-  "highlight": {
-    "fields": {
-      "title": {
-        "pre_tags": [
-          "<em>"
-        ],
-        "post_tags": [
-          "</em>"
-        ]
-      }
-    }
-  }
+  "version": true
 }

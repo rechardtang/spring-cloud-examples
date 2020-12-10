@@ -14,9 +14,12 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.PageRequest;
+import org.springframework.data.domain.Pageable;
 import org.springframework.data.elasticsearch.core.ElasticsearchRestTemplate;
 import org.springframework.data.elasticsearch.core.SearchHits;
+import org.springframework.data.elasticsearch.core.document.Document;
 import org.springframework.data.elasticsearch.core.mapping.IndexCoordinates;
+import org.springframework.data.elasticsearch.core.query.IndexQuery;
 import org.springframework.data.elasticsearch.core.query.NativeSearchQueryBuilder;
 import org.springframework.data.elasticsearch.core.query.Query;
 import org.springframework.test.context.junit4.SpringRunner;
@@ -165,19 +168,22 @@ public class Es76ApplicationTests {
 //        article2.setTags("疫情");
 //        articleRepository.save(article2);
 
-        Article article3 = new Article("美国疫情乱象频出");
-        article3.setAuthors(asList(new Author("新闻")));
-        article3.setTags("疫情");
-        articleRepository.save(article3);
+//        Article article3 = new Article("天道酬勤", "不积跬步无以至千里");
+//        article3.setAuthors(asList(new Author("天道")));
+//        article3.setTags("天道", "酬勤");
+//        articleRepository.save(article3);
+//
+//        final Page<Article> articleByAuthorName = articleRepository.findByTitle("千里", PageRequest.of(0, 10));
+//        assertEquals(1L, articleByAuthorName.getTotalElements());
+//
+//        QueryBuilder query = QueryBuilders.matchQuery("content", "天道").analyzer("ik_max_word");
+//        Query searchQuery = new NativeSearchQueryBuilder().withQuery(query)
+//                .withHighlightFields(new HighlightBuilder.Field("content").preTags("<em>").postTags("</em>")).build();
+//        SearchHits<Article> articleSearchHits = elasticsearchTemplate.search(searchQuery, Article.class, IndexCoordinates.of("blog"));
+//        Article content = articleSearchHits.getSearchHit(0).getContent();
+//        System.out.println(content);
+        Page<Article> page = articleRepository.findByTitle("千里", PageRequest.of(0, 10));
+        System.out.println(page);
 
-        final Page<Article> articleByAuthorName = articleRepository.findByTitle("阳光", PageRequest.of(0, 10));
-        assertEquals(2L, articleByAuthorName.getTotalElements());
-
-        QueryBuilder query = QueryBuilders.matchQuery("title", "阳光").analyzer("ik_max_word");
-        Query searchQuery = new NativeSearchQueryBuilder().withQuery(query)
-                .withHighlightFields(new HighlightBuilder.Field("title").preTags("<em>").postTags("</em>")).build();
-        SearchHits<Article> articleSearchHits = elasticsearchTemplate.search(searchQuery, Article.class, IndexCoordinates.of("blog"));
-        Article content = articleSearchHits.getSearchHit(0).getContent();
-        System.out.println(content);
     }
 }

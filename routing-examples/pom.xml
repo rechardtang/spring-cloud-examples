@@ -8,14 +8,14 @@
         <version>0.0.1-SNAPSHOT</version>
         <relativePath/> <!-- lookup parent from repository -->
     </parent>
-    <artifactId>mq-examples</artifactId>
+    <artifactId>routing-examples</artifactId>
     <version>0.0.1-SNAPSHOT</version>
-    <name>mq-examples</name>
+    <name>routing-examples</name>
     <description>Demo project for Spring Boot</description>
 
+
     <modules>
-        <module>kafka-examples</module>
-        <module>rabbitmq-examples</module>
-        <module>rocketmq-examples</module>
+        <module>routing-zuul</module>
+        <module>routing-gateway</module>
     </modules>
 </project>
