@@ -1,0 +1,25 @@
+spring:
+  shardingsphere:
+    datasource:
+      names: defaultDataSource,slaveDataSource
+    sharding:
+      master-slave-rules:
+        defaultDataSource:
+          # master datasource
+          master-data-source-name: defaultDataSource
+          slave-data-source-names: slaveDataSource
+      tables:
+        # hc_question_reply_record
+        hc_question_reply_record:
+          actual-data-nodes:
+            defaultDataSource.hc_question_reply_record_$->{2020..2025}_q$->{1..4}
+          table-strategy:
+            standard:
+              sharding-column: reply_wheel_time
+              # ?????? ????
+              preciseAlgorithmClassName: com.xx.QuestionRecordPreciseShardingAlgorithm
+              # ?????????BETWEEN??????????RangeShardingAlgorithm????????????
+              rangeAlgorithmClassName: com.xx.QuestionRecordRangeShardingAlgorithm
+      default-key-generator:
+        type: SEQ
+        column: id
