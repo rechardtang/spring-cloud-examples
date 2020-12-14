@@ -41,8 +41,6 @@
     </properties>
 
     <modules>
-        <module>routing-gateway</module>
-        <module>routing-zuul</module>
         <module>service-order</module>
         <module>eureka-examples</module>
         <module>dubbo-examples</module>

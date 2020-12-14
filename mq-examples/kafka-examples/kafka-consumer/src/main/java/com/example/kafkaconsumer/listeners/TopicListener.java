@@ -1,12 +1,7 @@
 package com.example.kafkaconsumer.listeners;
 
-import com.example.kafkaconsumer.pojo.Greeting;
 import org.springframework.kafka.annotation.KafkaListener;
-import org.springframework.kafka.annotation.PartitionOffset;
-import org.springframework.kafka.annotation.TopicPartition;
-import org.springframework.kafka.support.KafkaHeaders;
-import org.springframework.messaging.handler.annotation.Header;
-import org.springframework.messaging.handler.annotation.Payload;
+import org.springframework.kafka.support.Acknowledgment;
 import org.springframework.stereotype.Component;
 
 @Component
@@ -16,6 +11,12 @@ public class TopicListener {
     @KafkaListener(topics = "topic1", groupId = "foo")
     public void singleTopicListener(String message) {
         System.out.println("Received Message in group foo: " + message);
+    }
+
+    @KafkaListener(topics = "topic1", groupId = "foo")
+    public void singleTopicListenerManualCommit(String message, Acknowledgment ack) {
+        System.out.println("Received Message in group foo: " + message);
+        ack.acknowledge();
     }
 
 //    @KafkaListener(topics = "topic1, topic2", groupId = "foo")
