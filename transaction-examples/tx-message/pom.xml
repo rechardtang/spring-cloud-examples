@@ -4,17 +4,18 @@
     <modelVersion>4.0.0</modelVersion>
     <parent>
         <groupId>com.example</groupId>
-        <artifactId>spring-cloud-examples</artifactId>
+        <artifactId>transaction-examples</artifactId>
         <version>0.0.1-SNAPSHOT</version>
         <relativePath/> <!-- lookup parent from repository -->
     </parent>
-    <artifactId>mybatis-examples</artifactId>
+    <artifactId>tx-message</artifactId>
     <version>0.0.1-SNAPSHOT</version>
-    <name>mybatis-examples</name>
+    <name>message-transaction</name>
     <description>Demo project for Spring Boot</description>
 
     <modules>
-        <module>mybatis-annotation</module>
-        <module>mybatis-xml</module>
+        <module>tx-message-order</module>
+        <module>tx-message-point</module>
     </modules>
+
 </project>
