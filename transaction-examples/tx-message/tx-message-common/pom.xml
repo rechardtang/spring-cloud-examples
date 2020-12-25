@@ -4,19 +4,13 @@
     <modelVersion>4.0.0</modelVersion>
     <parent>
         <groupId>com.example</groupId>
-        <artifactId>transaction-examples</artifactId>
+        <artifactId>tx-message</artifactId>
         <version>0.0.1-SNAPSHOT</version>
         <relativePath/> <!-- lookup parent from repository -->
     </parent>
-    <artifactId>tx-message</artifactId>
+    <artifactId>tx-message-common</artifactId>
     <version>0.0.1-SNAPSHOT</version>
-    <name>message-transaction</name>
+    <name>tx-message-common</name>
     <description>Demo project for Spring Boot</description>
-
-    <modules>
-        <module>tx-message-common</module>
-        <module>tx-message-order</module>
-        <module>tx-message-point</module>
-    </modules>
 
 </project>

@@ -15,6 +15,7 @@
 
     <modules>
         <module>tx-message</module>
+        <module>tx-seata</module>
     </modules>
 
 </project>

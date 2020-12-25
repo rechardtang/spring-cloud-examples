@@ -1,7 +1,8 @@
+create database `order`;
 create table `order`
 (
-    `id`         bigint auto_increment not null,
-    `order_code` varchar(32)           not null,
+    `id`       bigint auto_increment not null,
+    `order_no` varchar(32)           not null,
     primary key (`id`)
 ) engine = innodb
   default charset = utf8mb4

@@ -8,15 +8,16 @@
         <version>0.0.1-SNAPSHOT</version>
         <relativePath/> <!-- lookup parent from repository -->
     </parent>
-    <artifactId>tx-message</artifactId>
+    <artifactId>tx-seata</artifactId>
     <version>0.0.1-SNAPSHOT</version>
-    <name>message-transaction</name>
+    <name>tx-seata</name>
     <description>Demo project for Spring Boot</description>
 
-    <modules>
-        <module>tx-message-common</module>
-        <module>tx-message-order</module>
-        <module>tx-message-point</module>
-    </modules>
-
+    <dependencies>
+        <dependency>
+            <groupId>io.seata</groupId>
+            <artifactId>seata-all</artifactId>
+            <version>1.4.0</version>
+        </dependency>
+    </dependencies>
 </project>
