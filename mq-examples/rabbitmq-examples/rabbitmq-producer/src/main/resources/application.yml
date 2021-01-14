@@ -1,0 +1,16 @@
+server:
+  port: 5600
+spring:
+  rabbitmq:
+    host: localhost
+    port: 5672
+    username: rabbitmq
+    password: rabbitmq
+    connection-timeout: 10000
+    virtual-host: /
+    publisher-confirm-type: correlated
+    listener:
+      type: simple
+      simple:
+        acknowledge-mode: manual
+
