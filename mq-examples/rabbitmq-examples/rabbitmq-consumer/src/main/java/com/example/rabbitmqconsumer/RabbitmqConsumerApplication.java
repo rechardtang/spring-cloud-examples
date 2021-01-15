@@ -6,7 +6,6 @@ import org.springframework.amqp.rabbit.annotation.RabbitListener;
 import org.springframework.amqp.support.AmqpHeaders;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
-import org.springframework.messaging.handler.annotation.Header;
 
 import java.io.IOException;
 
@@ -22,7 +21,7 @@ public class RabbitmqConsumerApplication {
     @RabbitListener(queues = QUEUE_001)
     public void receiveQueue001(Message message, Channel channel) throws IOException {
         System.out.println("method1 " + new String(message.getBody()) + ", tag = " + message.getMessageProperties());
-        channel.basicNack(message.getMessageProperties().getDeliveryTag(), false, false);
+        channel.basicAck(message.getMessageProperties().getDeliveryTag(), false);
     }
 
 //    @RabbitListener(queues = {FANOUT_QUEUE_1_NAME})

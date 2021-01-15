@@ -8,6 +8,7 @@ spring:
     password: rabbitmq
     connection-timeout: 10000
     virtual-host: /
+    publisher-returns: true
     publisher-confirm-type: correlated
     listener:
       type: simple
