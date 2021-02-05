@@ -1,0 +1,36 @@
+POST http://localhost:8080/api/user/register
+Accept: application/json
+Content-Type: application/json
+
+{
+  "username": "alex",
+  "password": "alex"
+}
+
+###
+
+POST http://localhost:8080/api/user/login
+Accept: application/json
+Content-Type: application/json
+
+{
+  "username": "alex",
+  "password": "alex"
+}
+
+###
+GET http://localhost:8080/foo
+Accept: application/json
+
+###
+GET http://localhost:8080/bar
+Accept: application/json
+Authorization: Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJhbGV4IiwiZXhwIjoxNjEyNDI2NDk2fQ.Xml_AKriEedCA9l9_Pc7EQzbzD5NNrqUFYY151In637N6mR66NK2j6ATFdmerbnkcL69hfRetBfAKukheNjDnA
+
+###
+# eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJhbGV4IiwiZXhwIjoxNjEyNDI2NDk2fQ.Xml_AKriEedCA9l9_Pc7EQzbzD5NNrqUFYY151In637N6mR66NK2j6ATFdmerbnkcL69hfRetBfAKukheNjDnA
+GET http://localhost:8080/logout
+Accept: application/json
+Authorization: Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJhbGV4IiwiZXhwIjoxNjEyNDI2NDk2fQ.Xml_AKriEedCA9l9_Pc7EQzbzD5NNrqUFYY151In637N6mR66NK2j6ATFdmerbnkcL69hfRetBfAKukheNjDnA
+
+###
